@@ -98,7 +98,7 @@ static void build_dirs(char *src, char *dst, size_t src_prefix_len, size_t dst_p
 			// Null-terminate it temporarily here so that we can work
 			// with it.
 			*p = '\0';
-			if (stat(src, &s) == 0 && S_ISDIR(s.st_mode)) {
+			if (lstat(src, &s) == 0 && S_ISDIR(s.st_mode)) {
 				// Null-terminate the dst path and undo its previous
 				// termination.
 				*q = '\0';
